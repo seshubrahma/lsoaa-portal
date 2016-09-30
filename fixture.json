@@ -1,0 +1,53 @@
+{
+	"admin" : {
+		"uid_002" : {
+			"email" : "gpalme@austin.utexas.edu",
+			"name" : "Gregory Palmer"
+		}
+	},
+	"coaches" : {
+		"uid_003" : {
+			"email" : "seymour.skinner@springfield.edu",
+			"name" : "Principal Skinner",
+			"school" : "Springfield Elementary"
+		}
+	},
+	"mentors" : {
+		"uid_001" : {
+			"feedback" : {
+				"feedback_001" : {
+					"author" : "uid_003",
+					"date" : "10/31/2016",
+					"feedback" : "Bob did great."
+				}
+			},
+			"profile" : {
+				"email" : "bob@burgers.com",
+				"name" : "Bob Belcher"
+			}
+		}
+	},
+	"schools" : {
+		"Springfield Elementary" : {
+			"coaches" : {
+				"uid_003" : {
+					"email" : "seymour.skinner@springfield.edu",
+					"name" : "Principal Skinner"
+				}
+			},
+			"mentors" : {
+				"uid_001" : {
+					"email" : "bob@burgers.com",
+					"name" : "Bob Belcher"
+				}
+			},
+			"profile" : {
+				"location" : "GPS coordinate",
+				"subjects" : {
+					"Life Sciences" : true,
+					"Physical Science and Chemistry" : true
+				}
+			}
+		}
+	}
+}

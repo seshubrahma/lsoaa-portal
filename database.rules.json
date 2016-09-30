@@ -1,6 +1,46 @@
 {
   "rules": {
-    ".read": "auth != null",
-    ".write": "auth != null"
+    "admin" : {
+      	".read" : false,
+        ".write" : false
+    },
+    "coaches" : {
+      "$coach_id" : {
+        ".read" : true,
+        ".write" : "$coach_id === auth.uid || !data.exists() && $coach_id === auth.uid"
+      }
+    },
+    "mentors" : {
+      "$mentor_id" : {
+        "profile" : {
+          ".write" : "auth.uid == $mentor_id",
+          ".read" : "root.child('schools').child(root.child('coaches').child(auth.uid).child('school').val()).child('coaches').hasChild(auth.uid) && root.child('schools').child(root.child('coaches').child(auth.uid).child('school').val()).child('mentors').hasChild($mentor_id)"
+        },
+        "feedback" : {
+          "$feedback_id" : {
+	          ".read" : "data.child('author').val() == auth.uid || root.child('admin').hasChild(auth.uid)",
+  	        ".write" : "root.child('schools').child(root.child('coaches').child(auth.uid).child('school').val()).child('coaches').hasChild(auth.uid) && root.child('schools').child(root.child('coaches').child(auth.uid).child('school').val()).child('mentors').hasChild($mentor_id)"
+          }
+        }
+      }
+    },
+    "schools" : {
+      "$school_name" : {
+        "coaches" : {
+          ".read" : true,
+          ".write" : "!data.parent().exists() || data.hasChild(auth.uid)"
+        },
+        "profile" : {
+          ".read" : true,
+          ".write" : "data.parent().child('coaches').hasChild(auth.uid)"
+        },
+        "mentors" : {
+          "$mentor_slot" : {
+            ".read" : true,
+            ".write" : "!data.exists() && $mentor_slot == auth.uid || $mentor_slot == auth.uid || root.child('admin').hasChild(auth.uid)"
+          }
+        }
+      }
+    },
   }
 }
