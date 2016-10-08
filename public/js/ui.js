@@ -40,7 +40,7 @@ function writeUserData() {
 
 function exists(role){
    console.log("User exists!!");
-   var lightBox = $("#lightBox");
+   /*var lightBox = $("#lightBox");
    lightBox.hide();
    switch(role){
        case "mentor":
@@ -57,13 +57,13 @@ function exists(role){
            break;
        }
    }
-   window.location.href = "location";
+   window.location.href = "location";*/
 }
 
 function doesntExist(){
     console.log("User does not exist!!");
-    var lightBox = $("#lightBox");
-    lightBox.show();
+    //var lightBox = $("#lightBox");
+    //lightBox.show();
     
 }
 
