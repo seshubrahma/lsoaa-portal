@@ -40,7 +40,7 @@ function writeUserData() {
 
 function exists(role){
    console.log("User exists!!");
-   var lightBox = $("#lightBox");
+   var lightBox = $("#myModal");
    lightBox.hide();
    switch(role){
        case "mentor":
@@ -62,7 +62,7 @@ function exists(role){
 
 function doesntExist(){
     console.log("User does not exist!!");
-    var lightBox = $("#lightBox");
+    var lightBox = $("#myModal");
     lightBox.show();
     
 }
