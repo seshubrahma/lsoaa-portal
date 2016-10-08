@@ -3,6 +3,7 @@ function login() {
     firebase.auth().signInWithPopup(provider).then(
         function(result) {
             console.log("login success!", result);
+            userExists(exists, doesntExist);
         }
     ).catch(
         function(error) {
@@ -37,8 +38,40 @@ function writeUserData() {
     ref.set(data);
 }
 
-function init() {
+function exists(role){
+   console.log("User exists!!");
+   var lightBox = $("#myModal");
+   lightBox.hide();
+   switch(role){
+       case "mentor":
+           window.location.href = "./coaches.html";
+           break;
+       case "admin":
+           window.location.href = "./coaches.html";
+           break;
+       case "coach":
+           window.location.href = "./coaches.html";
+           break;
+       default:
+           doesntExist();
+           break;
+   }
+   window.location.href = "./coaches.html";
+}
+
+function doesntExist(){
+    console.log("User does not exist!!");
+    var lightBox = $("#myModal");
+    lightBox.show();
     
+}
+
+function saveInfo() {
+   var role = $("#role").val();
+}
+
+function init() {
+
 }
 
 $(document).ready(init);
