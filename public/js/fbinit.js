@@ -1,10 +1,10 @@
-var config = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    databaseURL: "YOUR_DATABASE_URL",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGE_SENDER_ID"
-};
 
-firebase.initializeApp(config);
-
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDl-ISZGpZZ-ulwc4E8rCTfuFlK3DWeu88",
+    authDomain: "tacc-fce01.firebaseapp.com",
+    databaseURL: "https://tacc-fce01.firebaseio.com",
+    storageBucket: "tacc-fce01.appspot.com",
+    messagingSenderId: "174193904078"
+  };
+  firebase.initializeApp(config);
