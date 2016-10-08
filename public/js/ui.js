@@ -55,7 +55,6 @@ function exists(role){
        default:
            doesntExist();
            break;
-       }
    }
    window.location.href = "./coaches.html";
 }
