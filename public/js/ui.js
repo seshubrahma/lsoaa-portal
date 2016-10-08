@@ -6,7 +6,7 @@ function login() {
         }
     ).catch(
         function(error) {
-            console.log("login failed", result);
+            console.log("login failed", error);
         }
     );
 }
