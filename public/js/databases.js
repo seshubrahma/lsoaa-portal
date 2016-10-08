@@ -54,3 +54,9 @@ function userExists (yesCallback, noCallback)   {
     );	
 }
 
+function newUser(role) {
+    var id= firebase.auth().currentUser.uid;
+    var ref = firebase.database().ref('users').child(id);
+}
+
+
