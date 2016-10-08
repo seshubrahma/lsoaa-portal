@@ -1,12 +1,13 @@
 function login() {
     var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth.signInWithPopup(provider).then(
+    firebase.auth().signInWithPopup(provider).then(
         function(result) {
             console.log("login success!", result);
+            userExists(exists, doesntExist);
         }
     ).catch(
         function(error) {
-            console.log("login failed", result);
+            console.log("login failed", error);
         }
     );
 }
@@ -37,8 +38,20 @@ function writeUserData() {
     ref.set(data);
 }
 
+function exists(authentification){
+   console.log("User exists!!");
+   var lightBox = $("#lightBox");
+   lightBox.hide();
+   window.location.href = "location";
+   var userAuth = authentification;
+}
+
+function doesntExist(){
+    console.log("User does not exist!!");
+}
+
 function init() {
-    
+
 }
 
 $(document).ready(init);
