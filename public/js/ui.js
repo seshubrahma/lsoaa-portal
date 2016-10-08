@@ -44,20 +44,20 @@ function exists(role){
    lightBox.hide();
    switch(role){
        case "mentor":
-           window.location.href = "location";
+           window.location.href = "./coaches.html";
            break;
        case "admin":
-           window.location.href = "location";
+           window.location.href = "./coaches.html";
            break;
        case "coach":
-           window.location.href = "location";
+           window.location.href = "./coaches.html";
            break;
        default:
            doesntExist();
            break;
        }
    }
-   window.location.href = "location";
+   window.location.href = "./coaches.html";
 }
 
 function doesntExist(){
