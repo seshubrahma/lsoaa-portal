@@ -40,30 +40,30 @@ function writeUserData() {
 
 function exists(role){
    console.log("User exists!!");
-   /*var lightBox = $("#lightBox");
+   var lightBox = $("#myModal");
    lightBox.hide();
    switch(role){
        case "mentor":
-           window.location.href = "location";
+           window.location.href = "./coaches.html";
            break;
        case "admin":
-           window.location.href = "location";
+           window.location.href = "./coaches.html";
            break;
        case "coach":
-           window.location.href = "location";
+           window.location.href = "./coaches.html";
            break;
        default:
            doesntExist();
            break;
        }
    }
-   window.location.href = "location";*/
+   window.location.href = "./coaches.html";
 }
 
 function doesntExist(){
     console.log("User does not exist!!");
-    //var lightBox = $("#lightBox");
-    //lightBox.show();
+    var lightBox = $("#myModal");
+    lightBox.show();
     
 }
 
