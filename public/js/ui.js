@@ -38,16 +38,37 @@ function writeUserData() {
     ref.set(data);
 }
 
-function exists(authentification){
+function exists(role){
    console.log("User exists!!");
    var lightBox = $("#lightBox");
    lightBox.hide();
+   switch(role){
+       case "mentor":
+           window.location.href = "location";
+           break;
+       case "admin":
+           window.location.href = "location";
+           break;
+       case "coach":
+           window.location.href = "location";
+           break;
+       default:
+           doesntExist();
+           break;
+       }
+   }
    window.location.href = "location";
-   var userAuth = authentification;
 }
 
 function doesntExist(){
     console.log("User does not exist!!");
+    var lightBox = $("#lightBox");
+    lightBox.show();
+    
+}
+
+function saveInfo() {
+   var role = $("#role").val();
 }
 
 function init() {
